@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f8ff;
+}
+
+h1 {
+    color: #4a4a4a;
+}
+
+#sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 50px);
+    grid-template-rows: repeat(9, 50px);
+    border: 3px solid #333;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 24px;
+    line-height: 50px;
+}
+
+.cell.fixed {
+    background-color: #e0e0e0;
+}
+
+.cell:nth-child(3n) {
+    border-right: 2px solid #666;
+}
+
+.cell:nth-child(9n) {
+    border-right: 3px solid #333;
+}
+
+#sudoku-board > .cell:nth-child(n+19):nth-child(-n+27), 
+#sudoku-board > .cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid #666;
+}
+
+#sudoku-board > .cell:nth-child(n+73):nth-child(-n+81) {
+    border-bottom: 3px solid #333;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-size: 24px;
+    background-color: #fff;
+    color: #005f99;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+#new-game {
+    background-color: #4caf50;
+}
+
+#solve {
+    background-color: #f44336;
+}
